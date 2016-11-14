@@ -1,0 +1,7 @@
+parameter_defaults:
+  NovaImage: overcloud-full-compute
+  ContrailControllerCount: 3
+  ContrailControllerImage: overcloud-contrail
+  NtpServer: 10.84.5.100
+  ContrailConfigIfmapUserName: api-server
+  ContrailConfigIfmapUserPassword: api-server

@@ -24,11 +24,18 @@ parameters:
   ContrailControlHostIP:
     description: host IP address of Analytics
     type: string
+    default: '127.0.0.1'
   ContrailControlIfmapUserName:
     description: Ifmap user name
     type: string
+    default: 'control'
   ContrailControlIfmapUserPassword:
     description: Ifmap user password
+    type: string
+    default: 'control'
+  ContrailControlRNDCSecret:
+    description: RNDCSecret
+    default: sHE1SM8nsySdgsoRxwARtA==
     type: string
 
 resources:
@@ -50,5 +57,6 @@ outputs:
           - contrail::control::host_ip: {get_param: ContrailControlHostIP}
             contrail::control::ifmap_username: {get_param: ContrailControlIfmapUserName}
             contrail::control::ifmap_password: {get_param: ContrailControlIfmapUserPassword}
+            contrail::control::rndc_secret: {get_param: ContrailControlRNDCSecret}
       step_config: |
         include ::tripleo::network::contrail::control
