@@ -1,3 +1,12 @@
+resource_registry:
+  OS::TripleO::Compute::Net::SoftwareConfig: ../network/config/multiple-nics/compute.yaml
+  OS::TripleO::Controller::Net::SoftwareConfig: ../network/config/multiple-nics/controller.yaml
+  OS::TripleO::ContrailController::Net::SoftwareConfig: ../network/config/multiple-nics/controller.yaml
+  OS::TripleO::Network::Tenant: ../network/tenant.yaml
+  OS::TripleO::Controller::Ports::TenantPort: ../network/ports/tenant.yaml
+  OS::TripleO::Compute::Ports::TenantPort: ../network/ports/tenant.yaml
+  OS::TripleO::ContrailController::Ports::TenantPort: ../network/ports/tenant.yaml
+
 parameter_defaults:
   NovaImage: overcloud-full-compute
   ContrailControllerCount: 3
@@ -5,3 +14,11 @@ parameter_defaults:
   NtpServer: 10.84.5.100
   ContrailConfigIfmapUserName: api-server
   ContrailConfigIfmapUserPassword: api-server
+  EC2MetadataIp: 192.0.2.1
+  ControlPlaneDefaultRoute: 192.0.2.1
+  ControlPlaneSubnetCidr: "24"
+  TenantNetCidr: 172.16.0.0/24
+  NeutronTunnelTypes: 'vxlan'
+  #NeutronPublicInterface: nic2
+  #HypervisorNeutronPublicInterface: nic2
+
