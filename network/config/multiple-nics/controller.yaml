@@ -110,7 +110,7 @@ resources:
               use_dhcp: false
               addresses:
                 -
-                  ip_netmask: {get_param: TenantIpSubnet}
+                  ip_netmask: {get_param: InternalApiIpSubnet}
             #-
             #  type: interface
             #  name: nic3
